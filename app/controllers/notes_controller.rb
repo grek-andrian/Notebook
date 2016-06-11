@@ -35,7 +35,8 @@ before_action :find_note, only: [:show, :edit, :update, :destroy]
   end
 
   def destroy
-    #code
+    @note.destroy
+		redirect_to notes_path
   end
 
 private
