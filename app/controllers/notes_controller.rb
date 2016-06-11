@@ -27,7 +27,11 @@ before_action :find_note, only: [:show, :edit, :update, :destroy]
   end
 
   def update
-    #code
+    if @note.update(note_params)
+      redirect_to @note
+    else
+      render "edit"
+    end
   end
 
   def destroy
